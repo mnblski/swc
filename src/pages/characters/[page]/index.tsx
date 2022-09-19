@@ -4,7 +4,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next/types";
 import LayoutDefault from "../../../components/layouts/LayoutDefault";
 import PeopleListTemplate from "../../../components/templates/CharactersListTemplate";
 
-interface PeopleListPageProps {
+interface CharactersListPageProps {
   charactersData: Character[];
   pagesCount: number;
   pageCurrent: number | null;
@@ -20,7 +20,7 @@ const calcAvailablePage = ({
   pageLength: number | undefined;
 }) => (entitiesCount && pageLength ? Math.ceil(entitiesCount / pageLength) : 0);
 
-const CharactersListPage: NextPage<PeopleListPageProps> = ({
+const CharactersListPage: NextPage<CharactersListPageProps> = ({
   charactersData,
   pagesCount,
   pageCurrent,
