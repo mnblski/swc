@@ -88,6 +88,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       `${baseCharactersUrl}/?page=${params?.page}`
     );
 
+    console.log("b", charatersPageData);
+
+    console.log("a", charactersInitialData);
+
     return {
       props: {
         charactersData: charatersPageData.results || [],
