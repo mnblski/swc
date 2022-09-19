@@ -5,7 +5,7 @@ import LayoutDefault from "../../../components/layouts/LayoutDefault";
 import PeopleListTemplate from "../../../components/templates/CharactersListTemplate";
 
 interface PeopleListPageProps {
-  charactersData: CharactersApiResponse;
+  charactersData: Character[];
   pagesCount: number;
   pageCurrent: number | null;
 }

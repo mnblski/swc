@@ -92,8 +92,8 @@ const CharactersListTemplate: React.FC<CharactersListTemplateProps> = ({
       </div>
       <div>
         <ul className={styles.charactersList}>
-          {sortedData(characters)?.map((character: Character) => (
-            <li className={styles.characterCard}>
+          {sortedData(characters)?.map((character: Character, index) => (
+            <li className={styles.characterCard} key={index}>
               <div>
                 <span>{character.name}</span>
                 <span>Mass: {character.mass}</span>
