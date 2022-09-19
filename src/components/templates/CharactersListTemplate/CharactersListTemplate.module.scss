@@ -1,0 +1,108 @@
+@use "src/scss/abstracts/abstracts" as *;
+
+.main {
+  padding: 10px;
+  border-radius: 5px;
+
+  > .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+
+    @include md {
+      padding: 10px;
+    }
+
+    > .title {
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+    > .actions {
+      display: flex;
+      gap: 10px;
+
+      span {
+        font-size: 1.4rem;
+      }
+
+      button {
+        font-size: 1.2rem;
+        cursor: pointer;
+
+        &[data-is-active="true"] {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .charactersList {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    gap: 10px;
+
+    @include md {
+      flex-wrap: nowrap;
+      flex-direction: column;
+      padding: 20px 10px;
+    }
+
+    .characterCard {
+      display: flex;
+      flex-direction: column;
+      background: $color-white;
+      display: flex;
+      width: calc((100% / 2) - (10px / 2));
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+        rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+      @include md {
+        width: 100%;
+      }
+
+      span {
+        font-size: 1.4rem;
+
+        ~ span {
+          @include md {
+            margin-top: 5px;
+          }
+        }
+      }
+
+      > div {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .pageNavigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px;
+
+    @include md {
+      padding: 10px;
+    }
+
+    .currentPage {
+      background: $color-white;
+      padding: 5px 7.5px;
+      border-radius: 5px;
+      margin: 0 10px;
+    }
+
+    .paginationButton {
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@use "src/scss/abstracts/abstracts" as *;
+
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 10px;
+  background: $color-white;
+
+  &[data-no-background="true"] {
+    .container {
+      background: none;
+      box-shadow: none;
+
+      > h1 {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    max-width: 966px;
+    min-height: 500px;
+    margin-bottom: 10vh;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background: $color-light-grey;
+
+    @include md {
+      margin-bottom: 0;
+    }
+  }
+}
