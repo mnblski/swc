@@ -101,33 +101,33 @@ const CharactersListTemplate: React.FC<CharactersListTemplateProps> = ({
             </li>
           ))}
         </ul>
-        <div className={styles.pageNavigation}>
-          <NextLink href={`/characters/${getPageNumber("prev")}`}>
-            <button
-              type="button"
-              aria-label="Navigate to Next Page"
-              disabled={!pageCurrent || pageCurrent === 1}
-              className={styles.paginationButton}
-            >
-              Previous
-            </button>
-          </NextLink>
-          <div className={styles.currentPage}>
-            <span>
-              {getPageNumber("current")} / {pagesCount}
-            </span>
-          </div>
-          <NextLink href={`/characters/${getPageNumber("next")}`}>
-            <button
-              type="button"
-              aria-label="Navigate to Next Page"
-              disabled={!pageCurrent || pageCurrent === pagesCount}
-              className={styles.paginationButton}
-            >
-              Next
-            </button>
-          </NextLink>
+      </div>
+      <div className={styles.pageNavigation}>
+        <NextLink href={`/characters/${getPageNumber("prev")}`}>
+          <button
+            type="button"
+            aria-label="Navigate to Next Page"
+            disabled={!pageCurrent || pageCurrent === 1}
+            className={styles.paginationButton}
+          >
+            Previous
+          </button>
+        </NextLink>
+        <div className={styles.currentPage}>
+          <span>
+            {getPageNumber("current")} / {pagesCount}
+          </span>
         </div>
+        <NextLink href={`/characters/${getPageNumber("next")}`}>
+          <button
+            type="button"
+            aria-label="Navigate to Next Page"
+            disabled={!pageCurrent || pageCurrent === pagesCount}
+            className={styles.paginationButton}
+          >
+            Next
+          </button>
+        </NextLink>
       </div>
     </div>
   );
