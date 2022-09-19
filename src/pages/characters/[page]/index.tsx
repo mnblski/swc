@@ -66,10 +66,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
     return {
       paths,
-      fallback: false, // can also be true or 'blocking'
+      fallback: false,
     };
   } catch (error) {
-    return { paths: [{ params: {} }], fallback: false };
+    return { paths: [], fallback: false };
   }
 };
 
