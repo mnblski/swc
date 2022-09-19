@@ -88,9 +88,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       `${baseCharactersUrl}/?page=${params?.page}`
     );
 
-    console.log("b", charatersPageData);
-
-    console.log("a", charactersInitialData);
+    if (!charatersPageData) {
+      return {
+        notFound: true,
+      };
+    }
 
     return {
       props: {
@@ -102,10 +104,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     };
   } catch (error) {
     return {
-      redirect: {
-        destination: "/404",
-        permanent: false,
-      },
+      notFound: true,
     };
   }
 };
